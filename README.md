@@ -3,6 +3,7 @@
 A small browser game about finding the right moment to catch a nervous cat in a cozy, pixel-style room.
 
 **Author:** YIN Shiqi 
+
 **Course:** Assignment 3: An interactive experience  
 
 ## Idea and intended user
