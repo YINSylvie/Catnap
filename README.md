@@ -18,7 +18,7 @@ This audience description is a design interpretation of the current game, not a 
 2. If it hides, click the box or curtain interaction area to bring it out, or wait for it to return.
 3. Drag the cookie button into the room and release to place food. Alternatively, press and release the cookie button, then click a position in the room.
 4. Wait for the eating message and the cat's eating state, then click the cat to catch it.
-5. Click **↻ 再玩一次** (Play again) to start another round.
+5. Click **↻ Play again** to start another round.
 
 The interface asks players to place food on the floor, although the current code accepts positions anywhere inside the canvas.
 
