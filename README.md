@@ -1,8 +1,8 @@
 # CATNAP — Catch the Mischievous Cat
 
 **Author:** YIN Shiqi  
+
 **Course:** SD5913 · Assignment 3: An interactive experience  
-**Platform:** Desktop web browser · Individual project
 
 CATNAP is a small, relaxed game about making friends with a shy ginger cat. Explore a sunlit room, offer a treat, play with a feather, and earn enough trust for a cuddle. There is no countdown: the challenge is to notice how the cat responds and choose a gentler next action.
 
