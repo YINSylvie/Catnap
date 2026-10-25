@@ -1,58 +1,54 @@
-# Credits and provenance
+# Credits and sources — CATNAP
 
-This inventory is based on the retrieved `index.html`, its embedded game script, the separate `styles.css`, and the supplied conversation. It is not proof of original authorship or permission. Complete all applicable placeholders before publication.
+**Project author:** YIN Shiqi  
+**Edition covered:** the English desktop version included with these documents  
+**Updated:** 25 October 2026
 
-## Project code and design
+This file distinguishes the project's starting material, AI assistance, visual references, and the files actually distributed with the game.
 
-| Item | What can be established | Attribution still needed |
-| --- | --- | --- |
-| Game logic and Canvas 2D drawings | Inline script labelled `canvases/catch-the-mischievous-cat/app.js` draws the room, cat, food and feedback and implements the game states | [TODO: author; borrowed code or examples; actual source URLs; changes made; permission or licence] |
-| HTML layout and CSS | Interface markup and inline styles are in the export; a separate `styles.css` was also inspected | [TODO: author and any template, tutorial, course-example or AI contribution] |
-| Separate `script.js` | Not available in the retrieved attachments; no comparison was possible | [TODO: inspect and credit its actual contents] |
-| Course examples or tutorials | No specific source has been established | [TODO: list each source and what was adapted, or confirm none were used] |
+## Code and interaction design
 
-Do not label all code “original” or “written without AI” unless that is accurate and can be explained by the author.
+| Contribution | Source and use |
+| --- | --- |
+| Starting *Catch the Mischievous Cat* prototype and project direction | Supplied by YIN Shiqi. The existing project is associated with [YINSylvie/Catch-the-Mischievous-Cat](https://github.com/YINSylvie/Catch-the-Mischievous-Cat). Its initial implementation is recorded in local commit `1f11e8d`. The revision builds on its room, nervous-cat, food, hiding, and catching concept. |
+| Revised HTML, CSS, JavaScript, interaction rules, Canvas artwork, simple navigation, synthesized tones, and English wording | Substantial code and text generation/debugging assistance from **OpenAI Codex** during this project conversation. The author supplied requirements, references, corrections, and user-trial information. See [PROCESS.md](PROCESS.md) for the division of work and the decisions kept or changed. |
+| Tests and documentation | Codex assisted with the state-check script, code/browser inspection, screenshot capture, and drafting/revising README, PROCESS, and this credits file. |
+| Course examples, tutorials, or other borrowed implementation code | The author reports no use of course examples, tutorials, or another person's code as an intentional source. No specific external code example was supplied or deliberately adapted during this revision. This is not a claim that the AI-assisted code was written entirely by hand. |
 
-## Export runtime and bundled libraries
+The final implementation uses native browser APIs: Canvas 2D, Pointer Events, `requestAnimationFrame`, Web Audio, and `localStorage`. These are platform features, not bundled third-party code. The optional test script uses Node.js built-in modules only.
 
-The HTML contains Easel-labelled lifecycle/diagnostic scripts, an asset registry and bundled library code. These are present even though the inspected game logic uses native browser APIs rather than the libraries below. Attribution follows notices inside the supplied file; versions are left unspecified unless explicitly observed. These are source identifiers, not claims that online documentation was consulted for the game.
+## Visual references
 
-| Bundled component | Notice observed in the HTML | Source identifier |
-| --- | --- | --- |
-| Three.js | MIT; copyright 2010–2026 three.js authors | [three.js project](https://github.com/mrdoob/three.js) |
-| p5.js 2.3.4 | LGPL-2.1; header identifies an unmodified upstream library and references `p5.source.js` | [p5.js v2.3.4 source, as linked in the header](https://github.com/processing/p5.js/tree/v2.3.4) |
-| Tone.js | MIT; copyright 2014–2020 Yotam Mann | [Tone.js project](https://github.com/Tonejs/Tone.js) |
-| Matter.js | MIT; Liam Brummitt and contributors | [Matter.js project](https://github.com/liabru/matter-js) |
-| Phaser | MIT; copyright 2026 Richard Davey, Phaser Studio Inc. | [Phaser project](https://github.com/phaserjs/phaser) |
-| Easel-labelled export/runtime code | Runtime identifiers are visible; full origin and terms have not been established | [TODO: export tool/service, applicable attribution and redistribution terms] |
+Six images supplied by the author were viewed as **style references**:
 
-Keep the bundled copyright and licence notices with redistributed code. This table does not replace those notices or the applicable licences. **[TODO: check the final package's licence and source-distribution requirements, especially for bundled p5.js; this documentation review did not verify compliance.]**
+| Supplied file | What informed the revision |
+| --- | --- |
+| `像素02.jfif` | Warm domestic interior, wood surfaces, cream furniture, dense small details |
+| `像素04.jfif` | Isometric room composition and small personal objects |
+| `像素05.jfif` | Intimate atmosphere, warm local lighting, muted darker colors |
+| `像素06.jfif` | A complete isometric room with plants, furniture, and a cat-themed domestic setting |
+| `像素07.jfif` | Pixel-art color and atmospheric depth |
+| `像素08.jfif` | Evening atmosphere and contrasting cool/warm lighting |
 
-## Images and other media
+The original creators, source URLs, and licences of these supplied reference images were not provided. No ownership or reuse licence is claimed for them. The final game does **not** include the reference files, trace them into imported sprites, or load them as textures/background images. They are acknowledged here as visual influences. They should not be added to a public repository without establishing the applicable source and permission.
 
-- **Visible room, cat, food and overlay:** the inspected game draws these with Canvas 2D shapes and text. That describes their implementation, not the origin of their design or code. [TODO: identify any visual references, copied drawings or generated design inputs.]
-- **Embedded image assets:** the HTML includes a base64 asset registry. The inspected game script does not reference it, but the images remain part of the distributed export. [TODO: inventory every retained embedded image, its creator/source, licence or permission, and any AI generation details actually known. Do not infer provenance from embedded metadata alone.]
-- **Emoji:** paw, cat, cookie and heart symbols are rendered as text using the browser/system's available glyphs. No separate emoji image file was identified in the game logic.
-- **Fonts:** CSS requests `ui-rounded`, `Trebuchet MS`, `system-ui` and generic fallbacks; no external font request was identified in the inspected markup. Rendering depends on installed fonts.
-- **Audio:** no gameplay audio playback was found in the inspected game script. The export nevertheless bundles audio-related runtime/library code. [TODO: confirm whether the final submitted version adds any audio; credit each actual audio source if so.]
-- **Data:** no external dataset was identified in the inspected game logic. [TODO: confirm against the final submitted files.]
+## Images, icons, fonts, audio, and data
 
-## AI assistance
+| Material in this edition | Provenance |
+| --- | --- |
+| Room, furniture, plants, cat, treats, particles, and lighting | Drawn at runtime by AI-assisted Canvas code in `script.js`. No external sprite sheet, texture pack, photograph, or downloaded background is used. No AI image-generation tool was used for these final visuals. |
+| Interface icons | Inline SVG paths in `index.html` and text symbols rendered by the browser. The SVG paths were generated as part of the implementation; no external icon set is imported. |
+| Fonts | Installed/system fonts requested through CSS, including Trebuchet MS, Arial, monospace, and serif fallbacks. No font files are redistributed or fetched from a font service. |
+| Sound effects | Short sine-wave tones synthesized in `chime()` through Web Audio. No recorded audio, music file, sample pack, or third-party sound effect is included. |
+| `docs/screenshot.png` | Actual screenshot of the final English interface captured during browser verification with Codex assistance. It is documentation, not an external art asset. |
+| Game data and stories | Small in-code constants and AI-assisted fictional object stories. No external dataset or live API is used. Album stamps are generated locally from gameplay. |
 
-The supplied conversation confirms that ChatGPT was consulted for ideas and visual-style suggestions. Which suggestions were used remains to be confirmed by the author. Codex assisted with source inspection and drafting these three English documentation files.
+## Legacy files and scope
 
-**[TODO: disclose any additional AI tools used for game code, debugging, visual assets or text, including what each tool contributed. Do not infer an image model, code model, prompt history or authorship from the export alone.]**
+The earlier exported HTML contained runtime/library bundles, including Three.js, p5.js, Tone.js, Matter.js, and Phaser. The rewritten English `index.html` and `script.js` do not contain or load those bundles, so they are not dependencies of this edition. This clean submission folder does not include the old export, its embedded image registry, or the earlier `assets/` folder.
 
-See `PROCESS.md` for the required account of a suggestion kept and one changed or rejected, when applicable.
+The original working repository may still retain an old prototype image at `assets/f6f96c279bec42e087ee2a1e786163e0.png`, historical versions, and a local backup folder. The image depicts the earlier interface but is unused by the revised game; its creation/source details have not been established in this record. Do not assume that it is a required or cleared asset for this edition. If distributing legacy material, retain the applicable existing notices and establish the provenance of any retained images. This statement does not apply a new licence to historical or third-party material.
 
-## Complete unresolved credits
+## AI disclosure
 
-For every borrowed item, record:
-
-> Item/file: [TODO]  
-> Creator or organisation: [TODO]  
-> Exact source URL or course-example reference: [TODO]  
-> Licence or permission: [TODO]  
-> How it was used and modified: [TODO]
-
-No screenshot, user-trial recording, public repository URL or live-site URL has been invented for these documents. Add only real material and verified links.
+OpenAI Codex was used for substantial implementation, artwork-in-code, language, debugging, testing assistance, and documentation. There is no runtime AI dependency, paid model call, generated image service, microphone input, or account requirement in the playable experience. No exact model version is asserted. [PROCESS.md](PROCESS.md) records a suggestion kept and a direction changed by the author.

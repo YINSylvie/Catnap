@@ -1,0 +1,21 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const noop=()=>{};
+const context=new Proxy({createRadialGradient:()=>({addColorStop:noop})},{get:(o,k)=>o[k]||noop});
+const elements=new Map();
+function element(id){if(elements.has(id))return elements.get(id);const e={id,style:{},dataset:{},textContent:'',open:false,hidden:false,disabled:false,classList:{add:noop,remove:noop,toggle:noop},setAttribute:noop,append:noop,addEventListener:noop,setPointerCapture:noop,getContext:()=>context,getBoundingClientRect:()=>({left:0,top:0,width:800,height:530}),showModal(){this.open=true},close(){this.open=false},querySelector:s=>element(id+s)};elements.set(id,e);return e}
+const toolButtons=['explore','food','toy','pet','catch'].map(t=>{const e=element(t);e.dataset.tool=t;return e});
+const events={};
+const sandbox={console,Math,Set,Map,performance:{now:()=>0},requestAnimationFrame:noop,localStorage:{getItem:()=>null,setItem:noop},document:{getElementById:element,querySelectorAll:()=>toolButtons,querySelector:element,createElement:()=>element(Math.random()),addEventListener:noop},window:{addEventListener:(n,fn)=>events[n]=fn}};
+vm.createContext(sandbox);
+let source=fs.readFileSync(require('path').join(__dirname,'..','script.js'),'utf8');source=source.replace(/\}\)\(\);\s*$/,`globalThis.test={get g(){return g},P,validFloor,pathTo,reset,inspect,setTool,interact,hide,reveal,togglePause,advance(s){for(let i=0;i<s*60;i++){if(!paused&&!$('modal').open)clock+=1/60;update(1/60)}},hover(){hoverCat=true},modalClose(){$('modal').close()},key(e){}};})();`);
+vm.runInContext(source,sandbox);const t=sandbox.test;
+const floor=(u,v)=>({...t.P(u,v),u,v});const catPoint=()=>{const g=t.g;return {...t.P(g.cat.u,g.cat.v,17),...g.cat}};
+t.inspect('books');t.inspect('plant');t.inspect('radio');assert.equal(t.g.trust,15);assert.equal(t.g.found.size,3);t.inspect('books');assert.equal(t.g.trust,15,'repeated clue must not award trust');
+t.setTool('food');t.interact(floor(4,4));assert.equal(t.g.foods,3,'wall cannot consume food');t.interact(floor(150,140));assert.equal(t.g.foods,3,'table cannot consume food');
+t.interact(floor(180,230));assert.equal(t.g.foods,2);t.advance(7);assert.equal(t.g.fed,1);assert.equal(t.g.trust,40);assert.equal(t.g.food,null);
+t.setTool('pet');t.hover();t.interact(catPoint());t.advance(1.9);assert.equal(t.g.trust,58);assert.equal(t.g.petDone,true);t.interact(catPoint());assert.equal(t.g.mode,'idle','pet cooldown applies');
+t.setTool('toy');for(let i=0;i<3;i++){t.interact(catPoint());t.advance(1.2)}assert.equal(t.g.pounces,3);assert.equal(t.g.trust,94);t.setTool('catch');t.interact(catPoint());assert.equal(t.g.won,true,'hug succeeds with earned trust');t.modalClose();
+t.reset();t.setTool('catch');t.interact(catPoint());assert.equal(t.g.won,false);assert.equal(t.g.fear,15);t.hide();const hideAt=t.g.hiddenAt;t.inspect(hideAt==='box'?'cushion':'box');assert.equal(t.g.mode,'hidden','wrong hiding place cannot reveal cat');t.inspect(hideAt);assert.equal(t.g.mode,'idle');
+t.reset();t.setTool('food');t.interact(floor(180,80));for(let i=0;i<480;i++){t.advance(1/60);assert(t.validFloor(t.g.cat.u,t.g.cat.v),'walking route must remain on valid floor')}assert.equal(t.g.fed,1,'cat routes around table to reach snack');
+t.reset();t.setTool('food');t.interact(floor(180,230));t.togglePause();t.advance(9);assert.equal(t.g.fed,0,'pause must stop simulation');t.togglePause();t.advance(9);assert.equal(t.g.fed,1);t.reset();assert.equal(t.g.foods,3);assert.equal(t.g.fear,0);assert.equal(t.g.found.size,0);
+console.log('PASS: clues, duplicate rewards, floor validation, food walk/eat, long pet, cooldown, toy pounces, win, wrong-hide prevention, obstacle route, pause/resume, full reset.');

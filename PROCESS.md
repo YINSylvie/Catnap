@@ -1,89 +1,126 @@
-# Process — Catch the Mischievous Cat
+# Process — CATNAP
 
-## Status of this record
+**Author:** YIN Shiqi  
+**Assignment:** SD5913 · Assignment 3: An interactive experience  
+**Documentation date:** 25 October 2026
 
-This document separates evidence from the supplied conversation and current source from facts that still need the author's input. Code inspection does not establish development chronology, user-test results or authorship. No browser play-through or user trial was performed as part of this documentation review.
+## 1. Starting point
 
-## Starting idea
+My starting project was *Catch the Mischievous Cat*: a small browser game in a cozy room. The player could offer food and click the cat while it was eating. The cat could become alert or hide when approached. My intention was to make the player notice the cat's response and change their next action.
 
-The earlier concept was a room-like webpage where a mischievous cat could hide among page elements. The current implementation turns that idea into a Canvas 2D room with a box, a curtain, food placement and a catch opportunity while the cat eats.
+The first version had a working input–response–feedback loop, but I felt that the interaction was too simple and the scene was not rich enough. I wanted the experience to feel more like spending an afternoon with a cat. The revised design keeps a small, understandable goal: build enough trust to share a cuddle.
 
-The intended experience is a short loop of noticing a response, adjusting behaviour and trying again. Offering food creates a more deliberate interaction than only clicking a moving target. These statements describe the concept and the current design; they do not establish when each feature was added.
+## 2. A real user trial
 
-**[TODO: explain your own motivation and why you chose this audience and visual style.]**
+I asked one friend to try the early food-and-catching version **before explaining the controls**. The person is anonymous in this record.
 
-## How the current interaction works
-
-The main states are `relaxed`, `alert`, `hidden`, `eating` and `caught`.
-
-One piece of code that connects action to response is the canvas `pointerdown` handler. When the state is `eating`, it checks whether the pointer is within 64 canvas units of the cat's catch target. If so, it sets `win = true`, changes the state to `caught`, updates the labels and displays a success message. The render function draws the success overlay. The action therefore changes the program's state and gives both textual and visual feedback.
-
-An ordinary mistake is clicking the cat too early. In the relaxed or alert state, a click within the cat's hit area sends it into hiding and displays an explanatory message. The player can recover through a hiding hotspot, waiting or the restart control. This is an implemented recovery path, not a claim of tested usability.
-
-The pointer coordinates are converted from the displayed canvas size to its internal 960 × 560 coordinate system. CSS scales the canvas and changes the surrounding layout below 650 pixels.
-
-## A design or code change I actually made
-
-**[TODO: complete this section with a real change. The final source alone cannot prove an earlier version or a revision.]**
-
-- Earlier behaviour or design: [TODO]
-- Problem or reason for changing it: [TODO]
-- Change made: [TODO: identify the relevant handler, function or visual element]
-- Result and evidence: [TODO: describe what you checked, without inventing measurements]
-- Related commit, if available: [TODO: actual commit identifier]
-
-Possible areas for a future revision include matching the curtain hotspot to its drawing, restricting food to the floor, clearing all placement state on restart, and adding a keyboard alternative. These are review findings, not completed changes.
-
-## User trial required by the assignment
-
-**Not yet documented.** Ask at least one other person to try the game before explaining how it works. Record what they actually do; do not include identifying information or publish a recording of them.
-
-| Trial detail | Actual record to complete |
+| Trial detail | Record |
 | --- | --- |
-| Date, browser and device | [TODO] |
-| Task or introduction given before play | [TODO: use a neutral task without teaching the controls] |
-| First action attempted | [TODO] |
-| Hesitation, mistake or unexpected action | [TODO] |
-| Whether they understood the feedback | [TODO: observation or clearly labelled participant comment] |
-| What happened when they tried food and restart | [TODO] |
-| Improvement made because of the observation | [TODO: actual before/after change] |
-| If the design was kept, the evidence-based reason | [TODO: complete only if applicable] |
-| Follow-up check after the decision | [TODO] |
+| Version tried | The original version, centered on offering a snack and catching the cat |
+| Explanation before play | No explanation of the controls was given |
+| First action | The friend first wanted to catch the fleeing cat directly |
+| Feedback | The friend said that the interaction felt limited and the visuals felt simple; this is an English summary of the feedback, not a verbatim transcript |
+| Design implication | Direct catching was an intuitive first attempt, while the food-only route offered too little variety. The room also needed more atmosphere and detail |
+| Decision | Add several ways to build trust, explain premature cuddling through feedback, and revise the room artwork |
+| Information not recorded | The exact date, session length, browser/device, and a detailed action-by-action log |
 
-Do not describe this trial as completed until it has happened. A planned test or source review does not replace the required trial.
+No participant name or recording is included in this submission. I do not have evidence that this friend retested the final version, so the developer checks below are not presented as a second human trial.
 
-## Verification record
+## 3. Changes made in response
 
-Completed for these documents: static inspection of the retrieved `index.html`, its embedded game JavaScript and the separate `styles.css`. The separate `script.js` attachment was not available, so its contents and consistency with the export remain unverified.
+### From one catching opportunity to several ways of earning trust
 
-The checks below are planned, not passed:
+The old main route was to place food and catch the cat while it ate. I kept the idea that actions affect the cat's willingness to approach, but changed the final goal to a consensual cuddle after building trust.
 
-- [ ] Follow the README instructions from a fresh terminal and record browser/device: [TODO].
-- [ ] Place food, wait for eating, catch the cat and observe the success overlay.
-- [ ] Click the cat too early and verify recovery from hiding.
-- [ ] Try both hiding hotspots and compare their hit areas with the drawing.
-- [ ] Try dragging food outside the room and placing it with a subsequent click.
-- [ ] Try repeated clicks, a cancelled drag, and restart during and after food placement.
-- [ ] Check narrow-screen layout and record any touch-control limitations.
-- [ ] Reconcile the separate `script.js` with the inline implementation.
+The revised game offers exploration, fish treats, a feather wand, and gentle petting. These feed the same trust/alertness model rather than becoming unrelated mini-games. A player can try another approach if one interaction is unclear or the treats are used up. Cuddling requires at least 75 trust, alertness below 30, and a cat that is not eating.
 
-Record actual outcomes, failures and fixes here: **[TODO]**.
+Because the friend first tried to catch the cat directly, an early cuddle attempt now gives a clear message and raises alertness instead of producing an unexplained failure. The player can recover by waiting or making a friendly gesture. Trust and alertness meters, the narration panel, and the wish list make the next action visible.
 
-## AI tools and decisions
+### From a simple room to an explorable pixel diorama
 
-Confirmed from the supplied conversation: ChatGPT was consulted for interaction ideas and visual-style suggestions. The visible record does not contain the full assistant responses, so it cannot establish which suggestions were adopted.
+I supplied six pixel-art reference images and asked for a richer, more attractive scene. The revision uses an isometric room, warm wooden surfaces, cream upholstery, muted greens, plants, books, a radio, a cat tree, and small decorative objects. Afternoon light, evening lighting, floating dust, and cat animations add atmosphere. Objects also reveal stories, so some visual details have an interaction purpose.
 
-Codex was used for this documentation task to inspect the available source and draft English README, process and credits documents. This documentation task did not modify the game.
+The drawings are generated by Canvas functions in the game. The reference images themselves are not bundled with the submission or used as textures or sprites. Their source information is recorded honestly in [CREDITS.md](CREDITS.md).
 
-**[TODO: confirm the tools actually used to build the game, including any AI assistance with code, images, debugging or writing. The export's runtime markers do not establish who wrote the game or which model generated it.]**
+### Keeping desktop play practical
 
-- AI suggestion I kept: [TODO: actual suggestion, where it was used and why].
-- AI suggestion I changed or rejected: [TODO: actual suggestion, your decision and why; state “not applicable” only if accurate].
-- My own implementation and review work: [TODO].
-- Verification of AI output: [TODO: actual checks and corrections].
+During development I clarified that the target was a **computer webpage**. I kept the room on the left, the companion/wish-list panel on the right, and the tool tray underneath. The room size adapts to desktop viewport height to help keep the play area and tools together. I then requested a separate English edition, including the stories, help, album, ending, and accessibility labels.
 
-## Development history and submission
+### Fixing behavior found during development checks
 
-**[TODO: describe actual milestones and link them to genuine commits if available. Do not invent dates, commits or earlier versions.]**
+The development checks also led to specific corrections:
 
-Before submission, finish the real user trial and revision record, resolve credits, add a real screenshot, include working source and necessary assets, and check that the public repository opens while signed out. The supplied brief gives the deadline as **1 November 2026, 23:59 Hong Kong time**. Submit your actual repository URL through Canvas.
+- Restricted treat placement to usable floor/rug areas instead of accepting any canvas position.
+- Added a grid route around furniture instead of having the cat travel straight through the table.
+- Prevented a feather interaction from distracting the cat indefinitely from an already placed treat.
+- Corrected the initial keyboard cursor behavior, room framing, and English text spacing.
+- Kept discovery rewards one-time per object and added short interaction cooldowns.
+- Ensured an incorrect hiding-place click does not reveal the cat at the wrong location.
+- Handled pointer release/cancellation, focus loss, pause/resume, and round reset.
+- Expired walking footprint particles instead of retaining them indefinitely.
+
+The friend trial motivated the broader interaction/art changes. These later fixes came from code and browser checks, not additional observations attributed to the friend.
+
+## 4. One piece of code I can explain
+
+The clearest example is the **Fish Treat** loop in `script.js`:
+
+1. The page converts the displayed pointer location into canvas and isometric floor coordinates.
+2. `interact(p)` checks whether the selected tool is food, whether a treat remains, whether another treat already exists, and whether `validFloor()` accepts the location.
+3. On valid input, it stores a food object, reduces the food supply by one, and calls `travel()` to give Ginger a route toward it. Invalid placement returns a helpful message without using a treat.
+4. `pathTo()` finds a route on a small grid that excludes furniture. `update(dt)` advances the cat along that route over time.
+5. At the food, the cat enters `eating`. When the eating progress exceeds 2.8 seconds, the food is removed, trust rises by 25, and alertness decreases.
+6. `updateUI()` refreshes the trust meter, mood, and task state. The drawing and narration show the food, movement, progress, heart particles, and result. A short tone is added if sound is enabled.
+
+This connects a deliberate click to a state change and readable feedback. It also gives the player a reason to wait before acting again. The petting interaction uses the same principle but requires a sustained hold rather than a single click.
+
+## 5. AI tools and my decisions
+
+I used **OpenAI Codex** in this conversation for substantial implementation assistance: inspecting the starting project, proposing and generating revised HTML/CSS/JavaScript, drawing the room and cat in code, implementing interactions and navigation, debugging, translating the English edition, running checks, and drafting these documents. Browser automation and local scripts were used to inspect the result and test behavior. No AI image generator was used for the final game, and there is no AI model running inside the game.
+
+My contributions included supplying the starting project and visual references, reporting the friend's feedback, requesting richer interaction and artwork, clarifying the desktop target, requesting the English edition, and providing/correcting the factual trial account. The generated implementation should therefore be understood as **AI-assisted work**, not as code I wrote entirely by hand. The exact model version is not recorded here.
+
+**Suggestion I kept:** a shared trust system with treats, play, and petting. I kept this because it gives the player different meaningful actions while preserving a single goal and coherent feedback.
+
+**Direction I changed:** development initially included a mobile-layout check. I clarified that the project was for desktop web use. The final emphasis is mouse/keyboard control and a desktop arrangement of the scene, companion panel, and tool tray. Responsive styling remains, but phone testing is not the basis of the submission.
+
+I also requested a separate English version rather than replacing the Chinese version. AI output was checked through syntax checks, automated state tests, visible browser feedback, and layout inspection. These checks are evidence about the implementation; they do not guarantee usability for everyone or replace the friend trial.
+
+## 6. Verification record
+
+Development checks were carried out with assistance from Codex on 25 October 2026. The recorded environment included Windows, Python 3.14.4, Node.js 24.22.1, and the Codex in-app browser. A desktop viewport of 1366 × 900 was inspected for the English edition.
+
+| Check | Recorded outcome |
+| --- | --- |
+| Fresh-terminal run instructions | The documented `python -m http.server 8000 --bind 127.0.0.1` command was run from the submission folder. The page, script, stylesheet, and screenshot each returned HTTP 200. |
+| JavaScript syntax | `node --check` passed |
+| Automated state checks | Passed: first/repeated discoveries, floor validation, food supply and eating, held petting, pet cooldown, pounce rewards, cuddle success, wrong hiding-place handling, routing around furniture, pause/resume, and full reset |
+| Main browser route in the shared game implementation | Three discoveries (+15), one finished treat (+25), and three pounces (+36) reached the ending at 76 trust |
+| Sustained keyboard input | Holding Enter on the focused cat completed petting and awarded 18 trust |
+| English edition | English object feedback and help were inspected; the translated game passed the same state checks; no JavaScript errors appeared in the inspected browser log |
+| Desktop layout and screenshot | English desktop layout inspected and an actual browser screenshot saved as `docs/screenshot.png` |
+| Independent human retest of the final edition | Not recorded |
+| Public repository accessibility and final upload | The existing repository returned HTTP 200 to an anonymous request on 25 October 2026. The revised files still need to be committed/pushed, and the final remote contents checked. |
+
+The optional test file in `tests/` uses mocked DOM/Canvas objects. It verifies game logic, not real drawing quality, audio playback, or all browser event behavior. The screenshot and browser checks cover some of those practical gaps. Optional sound quality and compatibility across all browsers have not been formally evaluated.
+
+## 7. Visible development history
+
+The existing local repository contains these genuine commits, all dated 25 October 2026:
+
+| Commit | Recorded message |
+| --- | --- |
+| `1f11e8d` | `feat: add initial game implementation with canvas rendering and interactive elements` |
+| `ac8de14` | `fix: update information in README` |
+| `b1efe9a` | `chore: add a blank line for better readability in README` |
+| `530119f` | `fix: update game instructions for clarity in README` |
+
+The working tree then contains the revised game and English edition. Those later changes had **not been committed** when the history was inspected for this documentation. The complete redesign is not represented by the four earlier commits, and this document does not invent intermediate commits or dates.
+
+Before submission I need to commit the actual revisions and this documentation, push them, and check the repository while signed out. Future meaningful changes should be committed as they happen, rather than creating a fictional history afterward.
+
+## 8. Reflection
+
+The strongest change is the relationship between the player's action and Ginger's state: food invites approach, play creates a pounce, stillness completes a pet, and trust unlocks a cuddle. The richer room supports this loop through discovery and readable cues.
+
+One early trial gives a useful direction, but limited evidence. The next improvement would be an independent test of the final English version: can a new player discover a trust-building action, understand a failed early cuddle, and reach the ending without an explanation? That follow-up has not yet been recorded.
