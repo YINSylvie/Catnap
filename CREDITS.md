@@ -52,3 +52,7 @@ The original working repository may still retain an old prototype image at `asse
 ## AI disclosure
 
 OpenAI Codex was used for substantial implementation, artwork-in-code, language, debugging, testing assistance, and documentation. There is no runtime AI dependency, paid model call, generated image service, microphone input, or account requirement in the playable experience. No exact model version is asserted. [PROCESS.md](PROCESS.md) records a suggestion kept and a direction changed by the author.
+
+## GitHub Pages publishing workflow
+
+The current public demonstration uses GitHub Pages. The workflow in `.github/workflows/pages.yml` was prepared with Codex assistance using the official [GitHub Pages custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). It uses GitHub-maintained `actions/checkout`, `actions/configure-pages`, `actions/upload-pages-artifact`, and `actions/deploy-pages`. Their code remains in their respective upstream action repositories. The previous OpenAI Sites publication remains part of the development history. Changing the hosting address does not change the AI-assistance disclosure.

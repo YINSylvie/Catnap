@@ -124,3 +124,7 @@ Before submission I need to commit the actual revisions and this documentation, 
 The strongest change is the relationship between the player's action and Ginger's state: food invites approach, play creates a pounce, stillness completes a pet, and trust unlocks a cuddle. The richer room supports this loop through discovery and readable cues.
 
 One early trial gives a useful direction, but limited evidence. The next improvement would be an independent test of the final English version: can a new player discover a trust-building action, understand a failed early cuddle, and reach the ending without an explanation? That follow-up has not yet been recorded.
+
+## GitHub Pages release — 25 October 2026
+
+I requested a public URL without the previous hosting platform name. Codex added the workflow in `.github/workflows/pages.yml`, committed it as `aca0271`, and pushed it to the renamed repository `YINSylvie/Catnap`. Pages was then enabled with the workflow build type. The first push-triggered run failed before Pages was enabled; a new manual run completed successfully after setup. The public game is now available at [https://yinsylvie.github.io/Catnap/](https://yinsylvie.github.io/Catnap/). Anonymous requests returned HTTP 200 for the page, JavaScript, and stylesheet. The workflow publishes only the three game files.

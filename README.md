@@ -14,6 +14,12 @@ The experience is intended for casual desktop players who want a short, playful 
 
 The starting prototype let the player offer food and catch the cat while it ate. After a friend found the interaction repetitive and the scene too simple, I expanded the interaction around **building trust**. The revised goal is to persuade the cat to accept a cuddle, rather than simply click it at the right moment. See [PROCESS.md](PROCESS.md) for the trial, changes, and AI disclosure.
 
+## Play online
+
+**[Play CATNAP in your browser](https://yinsylvie.github.io/Catnap/)**
+
+The English game is hosted publicly on GitHub Pages. No login or local server is needed.
+
 ## Run locally
 
 Keep the project files together. From a fresh terminal, change into the folder containing `index.html`, then run:
@@ -23,13 +29,13 @@ python --version
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open **[https://catnap-ginger-afternoon.spiffy-elf-2297.chatgpt.site](https://catnap-ginger-afternoon.spiffy-elf-2297.chatgpt.site)** in a modern desktop browser. 
+Open **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** in a modern desktop browser. This address is only for the local-server option; use the public link above to play online. Stop the local server with Ctrl+C. 
 
 Python 3 is used only as a convenient static web server. There are **no Python packages, npm packages, build steps, API keys, accounts, or external game services** to install or configure. A Python requirements file is therefore not needed. The game itself uses HTML, CSS, and browser JavaScript. It needs Canvas 2D and Pointer Events; optional sound uses Web Audio, and memory stamps use browser storage.
 
 You can also open `index.html` directly. A consistent local web address is recommended because browser storage behavior for local files varies. If you do not have Python installed, direct opening lets you play without installing anything.
 
-**Repository:** [YINSylvie/Catch-the-Mischievous-Cat](https://github.com/YINSylvie/Catch-the-Mischievous-Cat). The configured repository returned HTTP 200 to an anonymous request on 25 October 2026. The latest changes still need to be committed and pushed. No live game link has been verified for this edition.
+**Repository:** [YINSylvie/Catnap](https://github.com/YINSylvie/Catnap). The configured repository returned HTTP 200 to an anonymous request on 25 October 2026. The latest changes still need to be committed and pushed. No live game link has been verified for this edition.
 
 ## How to play
 
