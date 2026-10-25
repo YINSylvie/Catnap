@@ -23,7 +23,7 @@ python --version
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Open **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)** in a modern desktop browser. Stop the server with **Ctrl+C** in that terminal. If port 8000 is already in use, replace it with 8001 in both the command and browser address.
+Open **[https://catnap-ginger-afternoon.spiffy-elf-2297.chatgpt.site](https://catnap-ginger-afternoon.spiffy-elf-2297.chatgpt.site)** in a modern desktop browser. Stop the server with **Ctrl+C** in that terminal. If port 8000 is already in use, replace it with 8001 in both the command and browser address.
 
 Python 3 is used only as a convenient static web server. There are **no Python packages, npm packages, build steps, API keys, accounts, or external game services** to install or configure. A Python requirements file is therefore not needed. The game itself uses HTML, CSS, and browser JavaScript. It needs Canvas 2D and Pointer Events; optional sound uses Web Audio, and memory stamps use browser storage.
 
