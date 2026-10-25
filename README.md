@@ -2,10 +2,8 @@
 
 A small browser game about finding the right moment to catch a nervous cat in a cozy, pixel-style room.
 
-**Author:** [TODO: your name]  
-**Course:** [TODO: course name] — Assignment 3: An interactive experience  
-**Public repository:** [TODO: add your actual public GitHub repository URL]  
-**Live version:** [TODO: add a verified live URL if available; otherwise remove this line]
+**Author:** YIN Shiqi 
+**Course:** Assignment 3: An interactive experience  
 
 ## Idea and intended user
 
