@@ -6,7 +6,7 @@
 
 CATNAP is a small, relaxed game about making friends with a shy ginger cat. Explore a sunlit room, offer a treat, play with a feather, and earn enough trust for a cuddle. There is no countdown: the challenge is to notice how the cat responds and choose a gentler next action.
 
-![CATNAP running in a desktop browser: an isometric pixel room, Ginger, trust and alertness meters, and five interaction tools.](assets/screenshot.png)
+![CATNAP running in a desktop browser: an isometric pixel room, Ginger, trust and alertness meters, and five interaction tools.](assets/screenshot01.png)
 
 ## Idea and intended user
 
