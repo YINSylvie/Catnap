@@ -38,7 +38,7 @@ The original creators, source URLs, and licences of these supplied reference ima
 | --- | --- |
 | Room, furniture, plants, cat, treats, particles, and lighting | Drawn at runtime by AI-assisted Canvas code in `script.js`. No external sprite sheet, texture pack, photograph, or downloaded background is used. No AI image-generation tool was used for these final visuals. |
 | Interface icons | Inline SVG paths in `index.html` and text symbols rendered by the browser. The SVG paths were generated as part of the implementation; no external icon set is imported. |
-| Fonts | Installed/system fonts requested through CSS, including Trebuchet MS, Arial, monospace, and serif fallbacks. No font files are redistributed or fetched from a font service. |
+| Fonts | **Joti One**, designed by **Eduardo Tunni**. The unmodified font is bundled at `assets/fonts/JotiOne-Regular.ttf` under the **SIL Open Font License 1.1**, included at `assets/fonts/OFL-Joti-One.txt`. Source: [Google Fonts — Joti One](https://fonts.google.com/specimen/Joti+One), [official font repository](https://github.com/google/fonts/tree/main/ofl/jotione). A generic serif font is used only as a fallback. |
 | Sound effects | Short sine-wave tones synthesized in `chime()` through Web Audio. No recorded audio, music file, sample pack, or third-party sound effect is included. |
 | `docs/screenshot.png` | Actual screenshot of the final English interface captured during browser verification with Codex assistance. It is documentation, not an external art asset. |
 | Game data and stories | Small in-code constants and AI-assisted fictional object stories. No external dataset or live API is used. Album stamps are generated locally from gameplay. |
@@ -56,3 +56,7 @@ OpenAI Codex was used for substantial implementation, artwork-in-code, language,
 ## GitHub Pages publishing workflow
 
 The current public demonstration uses GitHub Pages. The workflow in `.github/workflows/pages.yml` was prepared with Codex assistance using the official [GitHub Pages custom workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages). It uses GitHub-maintained `actions/checkout`, `actions/configure-pages`, `actions/upload-pages-artifact`, and `actions/deploy-pages`. Their code remains in their respective upstream action repositories. The previous OpenAI Sites publication remains part of the development history. Changing the hosting address does not change the AI-assistance disclosure.
+
+## Font update — 29 October 2026
+
+Joti One replaced the earlier system-font styling at the request of YIN Shiqi, with implementation assistance from Codex. Copyright 2012 The Joti One Project Authors; the original font reserves the name “Joti”. The font file is unchanged. Its complete copyright and licence notice is retained in `assets/fonts/OFL-Joti-One.txt`. The GitHub Pages workflow includes the font directory in the published game.

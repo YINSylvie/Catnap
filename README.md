@@ -69,6 +69,7 @@ Trying to leave a treat on furniture is rejected with a message and does not use
 ```text
 index.html             Page and accessible controls
 styles.css             Desktop layout and visual styling
+assets/fonts/          Joti One font and SIL Open Font License
 script.js              Game state, drawing, navigation, input, and synthesized tones
 docs/screenshot.png    Screenshot of the English desktop game
 tests/game-check.cjs   Optional checks using Node.js built-in modules
@@ -77,7 +78,7 @@ PROCESS.md             Development, user trial, decisions, and verification
 CREDITS.md             Code, visual references, audio, fonts, and AI attribution
 ```
 
-The room, cat, and effects are drawn in code; no downloaded image, audio, or font files are needed for play. The screenshot is documentation only. The source has no third-party JavaScript libraries. See [CREDITS.md](CREDITS.md) for the scope of that statement and visual-reference acknowledgements.
+The room, cat, and effects are drawn in code; no downloaded image or audio files are needed for play. Joti One is bundled locally in `assets/fonts/`, alongside its SIL Open Font License, so the font does not require an external font service. The screenshot is documentation only. The source has no third-party JavaScript libraries. See [CREDITS.md](CREDITS.md) for the scope of that statement and visual-reference acknowledgements.
 
 ## Verification and limitations
 
@@ -102,3 +103,7 @@ These checks use Node.js built-in modules only. The state tests use a mocked pag
 ## Before submission
 
 Commit and push the final source, documentation, screenshot, and any revisions to the public repository on your own account. Check that its URL opens while signed out. Submit the **repository URL** through Canvas by **Sunday 1 November 2026, 23:59 Hong Kong time**. A ZIP or local folder does not replace the required public repository submission.
+
+## Typography
+
+The game uses Joti One by Eduardo Tunni for the interface and Canvas text cues. The unmodified font file and SIL Open Font License 1.1 are included in `assets/fonts/`. The font is served from the same location as the game; no Google Fonts network request is required during play. See `CREDITS.md` for the source.
