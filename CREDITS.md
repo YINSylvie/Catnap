@@ -63,10 +63,14 @@ Joti One replaced the earlier system-font styling at the request of YIN Shiqi, w
 
 ## Background music — 31 October 2026
 
-- **Track:** Kitten’s Sunny Room (approximately 2:22).
+- **Track:** Kitten’s Sunny Room (approximately 2:20).
 - **Creator shown on Suno:** YINnuomi929; generated/shared through Suno.
 - **Source supplied by the project author:** [Suno sharing link](https://suno.com/s/yovTrfOexonOwGfT).
 - **Song page:** [Kitten’s Sunny Room](https://suno.com/song/4f2e0a62-c4ef-4311-8feb-8b1dd72a9ba8).
-- **Local file:** `assets/audio/kittens-sunny-room.m4a`. The supplied recording is stored without audio editing; the game loops it at 30% volume. No open-source licence or public-domain status is asserted for the track.
+- **Local file:** `assets/audio/bgm.mp3`. The supplied recording is stored without audio editing; the game loops it at 60% volume. No open-source licence or public-domain status is asserted for the track.
 
 Music and synthesized interaction tones share the top-right sound button. They start off; click the button to enable them. Music pauses when sound is off, the game is paused, or the page is hidden. If playback fails, a message explains the problem and the game remains playable. The file is served with the game rather than requiring a Suno login during play. The full Pages package must include `assets/audio/`.
+
+### Audio file correction
+
+The project author supplied `assets/audio/bgm.mp3` to replace the earlier unusable download. The MP3 was fully decoded successfully (44.1 kHz stereo, 192 kb/s, approximately 2:20) and checked for non-silent audio. The game and Pages workflow now reference this MP3 only; the earlier M4A file is not used or included in the deployed audio directory.

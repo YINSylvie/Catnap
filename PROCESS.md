@@ -136,3 +136,7 @@ I requested Joti One for the game page. With Codex assistance, the interface fon
 ## Background music integration — 31 October 2026
 
 I supplied a Suno link for “Kitten’s Sunny Room” and requested it as the game BGM. Codex assisted with adding the local recording, looping playback, a shared music/effects toggle, moderate playback volume, and pause/background handling. Music starts only after an explicit sound-button interaction. A playback failure produces an explanatory message without blocking play. The music source is credited in CREDITS and the publishing workflow includes its directory.
+
+### BGM playback correction
+
+The earlier downloaded M4A failed a real decoder check. After the author supplied `assets/audio/bgm.mp3`, Codex verified full decoding and non-silent samples, switched the game to the valid MP3, and restricted the published audio directory to this file. Optional synthesized-effects errors no longer disable independent music playback. Automated checks cover sound toggling, pause/resume, and muted reset; these checks do not measure the listener device volume or replace a listening test.
