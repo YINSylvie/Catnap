@@ -100,10 +100,6 @@ These checks use Node.js built-in modules only. The state tests use a mocked pag
 - Navigation uses a small grid with fixed furniture obstacles. It is a lightweight game rule, not a realistic simulation of animal behavior.
 - The recorded trial involved one friend and the early prototype. A further independent trial of the final version would provide stronger evidence of usability.
 
-## Before submission
-
-Commit and push the final source, documentation, screenshot, and any revisions to the public repository on your own account. Check that its URL opens while signed out. Submit the **repository URL** through Canvas by **Sunday 1 November 2026, 23:59 Hong Kong time**. A ZIP or local folder does not replace the required public repository submission.
-
 ## Typography
 
 The game uses Joti One by Eduardo Tunni for the interface and Canvas text cues. The unmodified font file and SIL Open Font License 1.1 are included in `assets/fonts/`. The font is served from the same location as the game; no Google Fonts network request is required during play. See `CREDITS.md` for the source.
@@ -111,13 +107,9 @@ The game uses Joti One by Eduardo Tunni for the interface and Canvas text cues. 
 ## Background music — 31 October 2026
 
 - **Track:** Kitten’s Sunny Room (approximately 2:20).
-- **Creator shown on Suno:** YINnuomi929; generated/shared through Suno.
+- **Creator shown on Suno:** YINnuomi929; generated/shared through Suno.(AI music I’ve created on Suno)
 - **Source supplied by the project author:** [Suno sharing link](https://suno.com/s/yovTrfOexonOwGfT).
 - **Song page:** [Kitten’s Sunny Room](https://suno.com/song/4f2e0a62-c4ef-4311-8feb-8b1dd72a9ba8).
 - **Local file:** `assets/audio/bgm.mp3`. The supplied recording is stored without audio editing; the game loops it at 60% volume. No open-source licence or public-domain status is asserted for the track.
 
 Music and synthesized interaction tones share the top-right sound button. They start off; click the button to enable them. Music pauses when sound is off, the game is paused, or the page is hidden. If playback fails, a message explains the problem and the game remains playable. The file is served with the game rather than requiring a Suno login during play. The full Pages package must include `assets/audio/`.
-
-### Audio file correction
-
-The project author supplied `assets/audio/bgm.mp3` to replace the earlier unusable download. The MP3 was fully decoded successfully (44.1 kHz stereo, 192 kb/s, approximately 2:20) and checked for non-silent audio. The game and Pages workflow now reference this MP3 only; the earlier M4A file is not used or included in the deployed audio directory.
