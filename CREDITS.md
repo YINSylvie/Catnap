@@ -39,7 +39,7 @@ The original creators, source URLs, and licences of these supplied reference ima
 | Room, furniture, plants, cat, treats, particles, and lighting | Drawn at runtime by AI-assisted Canvas code in `script.js`. No external sprite sheet, texture pack, photograph, or downloaded background is used. No AI image-generation tool was used for these final visuals. |
 | Interface icons | Inline SVG paths in `index.html` and text symbols rendered by the browser. The SVG paths were generated as part of the implementation; no external icon set is imported. |
 | Fonts | **Joti One**, designed by **Eduardo Tunni**. The unmodified font is bundled at `assets/fonts/JotiOne-Regular.ttf` under the **SIL Open Font License 1.1**, included at `assets/fonts/OFL-Joti-One.txt`. Source: [Google Fonts — Joti One](https://fonts.google.com/specimen/Joti+One), [official font repository](https://github.com/google/fonts/tree/main/ofl/jotione). A generic serif font is used only as a fallback. |
-| Sound effects | Short sine-wave tones synthesized in `chime()` through Web Audio. No recorded audio, music file, sample pack, or third-party sound effect is included. |
+| Sound effects | Short sine-wave tones synthesized in `chime()` through Web Audio. The interaction tones are generated in code; the separately credited Suno background music is bundled locally. |
 | `docs/screenshot.png` | Actual screenshot of the final English interface captured during browser verification with Codex assistance. It is documentation, not an external art asset. |
 | Game data and stories | Small in-code constants and AI-assisted fictional object stories. No external dataset or live API is used. Album stamps are generated locally from gameplay. |
 
@@ -60,3 +60,13 @@ The current public demonstration uses GitHub Pages. The workflow in `.github/wor
 ## Font update — 29 October 2026
 
 Joti One replaced the earlier system-font styling at the request of YIN Shiqi, with implementation assistance from Codex. Copyright 2012 The Joti One Project Authors; the original font reserves the name “Joti”. The font file is unchanged. Its complete copyright and licence notice is retained in `assets/fonts/OFL-Joti-One.txt`. The GitHub Pages workflow includes the font directory in the published game.
+
+## Background music — 31 October 2026
+
+- **Track:** Kitten’s Sunny Room (approximately 2:22).
+- **Creator shown on Suno:** YINnuomi929; generated/shared through Suno.
+- **Source supplied by the project author:** [Suno sharing link](https://suno.com/s/yovTrfOexonOwGfT).
+- **Song page:** [Kitten’s Sunny Room](https://suno.com/song/4f2e0a62-c4ef-4311-8feb-8b1dd72a9ba8).
+- **Local file:** `assets/audio/kittens-sunny-room.m4a`. The supplied recording is stored without audio editing; the game loops it at 30% volume. No open-source licence or public-domain status is asserted for the track.
+
+Music and synthesized interaction tones share the top-right sound button. They start off; click the button to enable them. Music pauses when sound is off, the game is paused, or the page is hidden. If playback fails, a message explains the problem and the game remains playable. The file is served with the game rather than requiring a Suno login during play. The full Pages package must include `assets/audio/`.

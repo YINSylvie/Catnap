@@ -132,3 +132,7 @@ I requested a public URL without the previous hosting platform name. Codex added
 ## Typography revision — 29 October 2026
 
 I requested Joti One for the game page. With Codex assistance, the interface font rules and Canvas text cues were updated, and the official font file was bundled locally with its SIL Open Font License. The GitHub Pages workflow was updated to copy the font directory, avoiding a missing-font error after deployment. This revision changes typography, not the interaction rules.
+
+## Background music integration — 31 October 2026
+
+I supplied a Suno link for “Kitten’s Sunny Room” and requested it as the game BGM. Codex assisted with adding the local recording, looping playback, a shared music/effects toggle, moderate playback volume, and pause/background handling. Music starts only after an explicit sound-button interaction. A playback failure produces an explanatory message without blocking play. The music source is credited in CREDITS and the publishing workflow includes its directory.

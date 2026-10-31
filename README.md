@@ -78,7 +78,7 @@ PROCESS.md             Development, user trial, decisions, and verification
 CREDITS.md             Code, visual references, audio, fonts, and AI attribution
 ```
 
-The room, cat, and effects are drawn in code; no downloaded image or audio files are needed for play. Joti One is bundled locally in `assets/fonts/`, alongside its SIL Open Font License, so the font does not require an external font service. The screenshot is documentation only. The source has no third-party JavaScript libraries. See [CREDITS.md](CREDITS.md) for the scope of that statement and visual-reference acknowledgements.
+The room, cat, and effects are drawn in code; no downloaded image files are needed for play. The supplied background track is bundled in `assets/audio/`. Joti One is bundled locally in `assets/fonts/`, alongside its SIL Open Font License, so the font does not require an external font service. The screenshot is documentation only. The source has no third-party JavaScript libraries. See [CREDITS.md](CREDITS.md) for the scope of that statement and visual-reference acknowledgements.
 
 ## Verification and limitations
 
@@ -96,7 +96,7 @@ These checks use Node.js built-in modules only. The state tests use a mocked pag
 - The main target is a desktop browser with a mouse or keyboard. Real phone hardware and all browser/assistive-technology combinations have not been tested.
 - Canvas is a visual play surface. Labels and focusable controls support keyboard use, but a fully equivalent nonvisual experience has not been established.
 - Album stamps are stored only in the current browser. Clearing site data or using restricted/private storage may lose them; play continues without successful saving.
-- Optional tones can depend on browser audio support and user activation. There is no recorded music, spoken narration, or required audio track.
+- Optional tones can depend on browser audio support and user activation. Background music is optional; there is no spoken narration or required audio input.
 - Navigation uses a small grid with fixed furniture obstacles. It is a lightweight game rule, not a realistic simulation of animal behavior.
 - The recorded trial involved one friend and the early prototype. A further independent trial of the final version would provide stronger evidence of usability.
 
@@ -107,3 +107,13 @@ Commit and push the final source, documentation, screenshot, and any revisions t
 ## Typography
 
 The game uses Joti One by Eduardo Tunni for the interface and Canvas text cues. The unmodified font file and SIL Open Font License 1.1 are included in `assets/fonts/`. The font is served from the same location as the game; no Google Fonts network request is required during play. See `CREDITS.md` for the source.
+
+## Background music — 31 October 2026
+
+- **Track:** Kitten’s Sunny Room (approximately 2:22).
+- **Creator shown on Suno:** YINnuomi929; generated/shared through Suno.
+- **Source supplied by the project author:** [Suno sharing link](https://suno.com/s/yovTrfOexonOwGfT).
+- **Song page:** [Kitten’s Sunny Room](https://suno.com/song/4f2e0a62-c4ef-4311-8feb-8b1dd72a9ba8).
+- **Local file:** `assets/audio/kittens-sunny-room.m4a`. The supplied recording is stored without audio editing; the game loops it at 30% volume. No open-source licence or public-domain status is asserted for the track.
+
+Music and synthesized interaction tones share the top-right sound button. They start off; click the button to enable them. Music pauses when sound is off, the game is paused, or the page is hidden. If playback fails, a message explains the problem and the game remains playable. The file is served with the game rather than requiring a Suno login during play. The full Pages package must include `assets/audio/`.
